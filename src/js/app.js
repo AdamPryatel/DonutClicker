@@ -1,34 +1,61 @@
-// Dom
+ // Dom
  const total = document.getElementById('totalDonuts');
- const Maker = document.getElementById('donutMaker');
 
-// Game Variables
- let value = 0;
+ const totalAuto = document.getElementById('totalAutoClickers') ;
+ const autoButton = document.getElementById('addClicker');
 
+ const totalMultiplier = document.getElementById('totalMultipliers');
+ const multiplierButton = document.getElementById('addMultiplier');
+
+ const valuePerClick = document.getElementById('perClick');
+
+let myDonut = new Donut();
+
+
+function updateText()                   // Interacts w/ HTML
+{
+    total.innerText = myDonut.getDonutCount();
+    totalAuto.innerText = myDonut.getautoClicker();
+    totalMultiplier.innerText = myDonut.getdonutMultiplierCount();
+    valuePerClick.innerText = myDonut.getdonutsEarnedPerClick();
+}
 
 
 // Feature 1 : Add to donut count and retrieve a donut count
 function add_donutCount()
 {
-    var element = document.getElementById('totalDonuts')
-    var value = element.innerHTML;
-
-    ++value;
-
-    console.log(value);
-    document.getElementById('totalDonuts').innerHTML = value;
+    myDonut.add_donutCount();
+    updateText();
 }
-add_donutCount() 
 
 
-// Feature 2 : Be able to purchase the first Auto Clicker with 100 donuts from your donut count.
- // Feature 2.a : Buy AutoClicker
-//  function add_Autoclicker(){
 
-//     const autoClicker = document.getElementById('addClicker');
+// feature 2           
+function auto()     // Updates values in JS by 1
+{
 
-//     autoClicker.addEventListener("click", ()=> {
-//         clicks -= 100;
-//     })
+myDonut.buy_autoClicker();
 
-//  }
+  updateText();
+  
+}
+
+
+function autoUpdate(){                  // adds to the value in JS 
+
+   updateText();
+}
+
+setInterval(updateText, 1000);
+
+
+// Iteration 2 feature 1
+function Multiplier()
+{
+ myDonut.buy_donutMultiplier();
+ updateText();
+} 
+
+function multiplierUpdate(){
+ updateText();
+}
