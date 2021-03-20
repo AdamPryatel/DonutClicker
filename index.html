@@ -3,12 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 4 Project</title>
+    <title>Donut Maker</title>
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
     <div class="container">
-        <div class="anchor"></div>
+
+        <header >
+            <nav>
+                <ul>
+                    <li>Fred the Baker Company</li>
+                    <li>Inspiration for Donut Clicker</li>
+                    <li>Contact</li>
+                    <li>About the Developer</li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class = "clickHandler">
+                <button onclick="add_donutCount()" type ="button" id= "donutMaker">Click to make donuts</button>
+                <h1>Total Donuts: <span id = "totalDonuts">0</span></h1>         <!-- Maybe have the button also display amount of donuts made? -->
+                <h2>Value Per Click: <span id = "perClick">1</span></h2>
+            </div>
+            <div class = "autoCicker">
+                <p>Amount of Auto Clickers Perchased: <span id = "totalAutoClickers">0</span></p> <!-- Maybe have the button also display amount of clickers purchased? -->
+                <button onclick = "auto()" id = "addClicker">Click to Purchase Auto Clickers</button> <!-- Should be disabled if you do not have enough donuts to buy -->
+            </div>
+            <div class = "clickMultiplier">
+                <p>Amount of Donut Multipliers Purchased: <span id = "totalMultipliers">0</span></p> <!-- Maybe have the button also display amount of multipliers purchased? -->
+                <button onclick = "Multiplier()" Id = "addMultiplier">Purchase Multiplier</button> <!-- Should be disabled if you do not have enough donuts to buy -->
+            </div>
+        </main>
+
+        <div class="anchor"></div>  <!-- ??? -->
+
     </div>
-    <script src="/src/app.js"></script>
+    <script src = "src/js/donutMaker.js"></script>
+    <script src="/src/js/app.js"></script>
 </body>
 </html>
