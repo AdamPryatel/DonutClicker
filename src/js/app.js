@@ -18,14 +18,15 @@ function updateText()                   // Interacts w/ HTML
     totalAuto.innerText = myDonut.getautoClicker();
     totalMultiplier.innerText = myDonut.getdonutMultiplierCount();
     valuePerClick.innerText = myDonut.getdonutsEarnedPerClick();
-};
+}
+
 
 // Feature 1 : Add to donut count and retrieve a donut count
 function add_donutCount()
 {
     myDonut.add_donutCount();
     updateText();
-};
+}
 
 
 
