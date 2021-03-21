@@ -9,6 +9,8 @@
 
  const valuePerClick = document.getElementById('perClick');
 
+ const resetButton = document.getElementById('resetButton'); // Reset
+
 let myDonut = new Donut();
 
 
@@ -58,4 +60,10 @@ function Multiplier()
 
 function multiplierUpdate(){
  updateText();
+}
+
+function resetFunction()
+{
+  resetButton.innerText = myDonut.resetFunction(); // Reset
+  updateText();
 }

@@ -81,4 +81,14 @@ class Donut {
         }
     }
 
+
+    resetFunction = () => {
+        this._value = 0;
+        this._autoClicker = 0;
+        this._autoClickerCost = 100;
+        this._donutMultiplierCount = 0;
+        this._donutMultiplierCost = 10;
+        this._donutsEarnedPerClick = 1;
+    }
+
 }
