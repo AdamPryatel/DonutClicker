@@ -11,7 +11,7 @@
 
  const resetButton = document.getElementById('resetButton'); // Reset
 
-  //Modal
+  //Modal 1
 var modal = document.getElementById("myModal");         // Get the modal
 var btn = document.getElementById("myBtn");             // Get the button that opens the modal
 var span = document.getElementsByClassName("close")[0]  // Get the <span> element that closes the modal
@@ -27,6 +27,25 @@ span.onclick = function() {
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+  }
+} 
+
+// Modal 2
+var modal2 = document.getElementById("myModal2");         // Get the modal
+var btn2 = document.getElementById("myBtn2");             // Get the button that opens the modal
+var span2 = document.getElementsByClassName("close2")[0]  // Get the <span> element that closes the modal
+
+btn2.onclick = function() {
+  modal2.style.display = "block";
+}
+
+span2.onclick = function() {
+  modal2.style.display = "none";
+}
+
+window2.onclick = function(event) {
+  if (event.target == modal) {
+    modal2.style.display = "none";
   }
 } 
 
