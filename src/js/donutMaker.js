@@ -5,7 +5,7 @@ class Donut {
         this._autoClickerCost = 100;
         this._donutMultiplierCount = 0;
         this._donutMultiplierCost = 10;
-        this._donutsEarnedPerClick = 1; // this will change when you add a multiplier
+        this._donutsEarnedPerClick = 1;
     }
 
     // Getters
@@ -27,6 +27,15 @@ class Donut {
     getdonutsEarnedPerClick()
     {
         return this._donutsEarnedPerClick;
+    }
+
+    getautoClickerCost()
+    {
+        return this._autoClickerCost;
+    }
+
+    getdonutMultiplierCost(){
+        return this._donutMultiplierCost;
     }
 
     add_donutCount()    //  Needs to account for multipliers
@@ -80,15 +89,4 @@ class Donut {
             this.add_donutCount();
         }
     }
-
-
-    resetFunction = () => {
-        this._value = 0;
-        this._autoClicker = 0;
-        this._autoClickerCost = 100;
-        this._donutMultiplierCount = 0;
-        this._donutMultiplierCost = 10;
-        this._donutsEarnedPerClick = 1;
-    }
-
 }

@@ -12,30 +12,64 @@
         <header >
             <nav>
                 <ul>
-                    <li>Fred the Baker Company</li>
-                    <li>Inspiration for Donut Clicker</li>
-                    <li>Contact</li>
-                    <li>About the Developer</li>
+                    <li>
+                        <button class = "openModal" id = "testButton" onclick = "modal()">About Fred the Baker Company</button>
+                        <div id = "companyModal" class = "modal">
+                            <div class = "modal-content">
+                                <span class = "close" onclick = "closeModal()">&times;</span>
+                                <p>Fred the Baker is tired of making real donuts and is ready to retire. He needs our help to keep his love of donuts alive. He wants you to create a game that uses button clicks to create virtual donuts for the world to enjoy. But all those early mornings of donut making may have tired out his brain because he has some strange requirements for 'Auto Clickers' and 'Donut Multipliers'. Unfortunately, it's always "Time to make the Donuts" and Fred is too busy to give us guidance on how to implement these requirements.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class = "openModal" onclick = "modal()">Inspiration for Donut Clicker</button>
+                        <div id = "inspirationModal" class = "modal">
+                            <div class = "modal-content">
+                                <span class = "close" onclick = "closeModal()">&times;</span>
+                                <p>Fred the Baker is a great guy, he makes amazing donuts, so it is worth the time to help him.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class = "openModal" onclick = "modal()">Contact</button>
+                        <div id = "contactModal" class = "modal">
+                            <div class = "modal-content">
+                                <span class = "close" onclick = "closeModal()">&times;</span>
+                                <p>Phone: 330-741-1125</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class = "openModal" onclick = "modal()">About the Developer</button>
+                        <div id = "aboutAdamModal" class = "modal">
+                            <div class = "modal-content">
+                                <span class = "close" onclick = "closeModal()">&times;</span>
+                                <p>The develpoer, Adam Pryatel built this clicker via Javascript</p>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </header>
 
         <main>
             <div class = "clickHandler">
-            <button onclick="add_donutCount()" type ="button" id= "donutMaker">Click to make donuts</button>
+                <h2>Click the Donut to make Donuts</h2>
+                <br>
+            <img src= "images/donuts.jpg" onclick="add_donutCount()" type ="button" id= "donutMaker">
                 <h1>Total Donuts: <span id = "totalDonuts">0</span></h1>         <!-- Maybe have the button also display amount of donuts made? -->
                 <h2>Value Per Click: <span id = "perClick">1</span></h2>
             </div>
             <div class = "autoCicker">
                 <p>Amount of Auto Clickers Perchased: <span id = "totalAutoClickers">0</span></p> <!-- Maybe have the button also display amount of clickers purchased? -->
-                <button onclick = "auto()" id = "addClicker">Click to Purchase Auto Clickers</button> <!-- Should be disabled if you do not have enough donuts to buy -->
+                <button onclick = "auto()" id = "addClicker" disabled = "disabled">Purchase auto Clickers for: </button> <!-- Should be disabled if you do not have enough donuts to buy -->
             </div>
             <div class = "clickMultiplier">
                 <p>Amount of Donut Multipliers Purchased: <span id = "totalMultipliers">0</span></p> <!-- Maybe have the button also display amount of multipliers purchased? -->
-                <button onclick = "Multiplier()" id = "addMultiplier">Purchase Multiplier</button> <!-- Should be disabled if you do not have enough donuts to buy -->
+                <button onclick = "Multiplier()"  id = "addMultiplier" disabled = "disabled">Purchase Multiplier for: </button> <!-- Should be disabled if you do not have enough donuts to buy -->
             </div>
             <div class = "reset">
-                <button onclick = "resetFunction()" id="resetButon">Reset Game</button>
+                <button onclick = "ResetGame()" id="resetButon">Reset Game</button>
             </div>
         </main>
 

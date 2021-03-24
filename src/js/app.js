@@ -11,8 +11,19 @@
 
  const resetButton = document.getElementById('resetButton'); // Reset
 
+  //Modal
+  //  const modal = document.getElementById('companyModal');
+  //  const modalButton = document.querySelectorAll('testButton');
+  //  const closeModal = document.querySelectorAll('.close');
+
 let myDonut = new Donut();
 
+
+function ResetGame(){
+  myDonut = new Donut();
+  updateButtons();
+  updateText();
+}
 
 function updateText()                   // Interacts w/ HTML
 {
@@ -20,6 +31,9 @@ function updateText()                   // Interacts w/ HTML
     totalAuto.innerText = myDonut.getautoClicker();
     totalMultiplier.innerText = myDonut.getdonutMultiplierCount();
     valuePerClick.innerText = myDonut.getdonutsEarnedPerClick();
+
+    autoButton.innerText=`Purchase Auto Clicker for: ${myDonut.getautoClickerCost()}`;
+    multiplierButton.innerText= `Purchase Multiplier for: ${myDonut.getdonutMultiplierCost()}`;
 }
 
 
@@ -28,6 +42,7 @@ function add_donutCount()
 {
     myDonut.add_donutCount();
     updateText();
+    updateButtons();
 }
 
 
@@ -39,6 +54,7 @@ function auto()     // Updates values in JS by 1
 myDonut.buy_autoClicker();
 
   updateText();
+  updateButtons();
   
 }
 
@@ -46,6 +62,7 @@ myDonut.buy_autoClicker();
 function autoUpdate(){                  // adds to the value in JS 
 
    updateText();
+   updateButtons();
 }
 
 setInterval(updateText, 1000);
@@ -56,14 +73,31 @@ function Multiplier()
 {
  myDonut.buy_donutMultiplier();
  updateText();
+ updateButtons();
 } 
 
 function multiplierUpdate(){
  updateText();
+ updateButtons();
 }
 
-function resetFunction()
+
+
+// Disabler
+function updateButtons()
 {
-  resetButton.innerText = myDonut.resetFunction(); // Reset
-  updateText();
+  autoButton.disabled = !(myDonut.getDonutCount() >= myDonut.getautoClickerCost());
+  multiplierButton.disabled = !(myDonut.getDonutCount() >= myDonut.getdonutMultiplierCost());
 }
+
+
+// // Modal
+  // function modal()
+  // {
+  //   modal.style.display="block";
+  // }
+
+  // function closeModal()
+  // {
+  //   modal.style.display = "none";
+  // }
