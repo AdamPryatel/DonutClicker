@@ -12,12 +12,26 @@
  const resetButton = document.getElementById('resetButton'); // Reset
 
   //Modal
-  //  const modal = document.getElementById('companyModal');
-  //  const modalButton = document.querySelectorAll('testButton');
-  //  const closeModal = document.querySelectorAll('.close');
+var modal = document.getElementById("myModal");         // Get the modal
+var btn = document.getElementById("myBtn");             // Get the button that opens the modal
+var span = document.getElementsByClassName("close")[0]  // Get the <span> element that closes the modal
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+} 
+
 
 let myDonut = new Donut();
-
 
 function ResetGame(){
   myDonut = new Donut();
@@ -89,15 +103,3 @@ function updateButtons()
   autoButton.disabled = !(myDonut.getDonutCount() >= myDonut.getautoClickerCost());
   multiplierButton.disabled = !(myDonut.getDonutCount() >= myDonut.getdonutMultiplierCost());
 }
-
-
-// // Modal
-  // function modal()
-  // {
-  //   modal.style.display="block";
-  // }
-
-  // function closeModal()
-  // {
-  //   modal.style.display = "none";
-  // }
