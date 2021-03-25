@@ -24,11 +24,6 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-} 
 
 // Modal 2
 var modal2 = document.getElementById("myModal2");         // Get the modal
@@ -43,12 +38,19 @@ span2.onclick = function() {
   modal2.style.display = "none";
 }
 
-window2.onclick = function(event) {
-  if (event.target == modal) {
-    modal2.style.display = "none";
-  }
-} 
 
+//Modal 3
+var modal3 = document.getElementById("myModal3");         // Get the modal
+var btn3 = document.getElementById("myBtn3");             // Get the button that opens the modal
+var span3 = document.getElementsByClassName("close3")[0]  // Get the <span> element that closes the modal
+
+btn3.onclick = function() {
+  modal3.style.display = "block";
+}
+
+span3.onclick = function() {
+  modal3.style.display = "none";
+}
 
 let myDonut = new Donut();
 
